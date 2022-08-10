@@ -106,3 +106,51 @@ void List_PrintListV1(List *l){
 
     //printf("first->prox == %d\nlast == %d\n last->ant == %d\n\n",l->first->prox->val, l->last->val, l->last->ant->val);
 }
+
+void List_RemoveNode(List *l, int val){
+
+    if(!List_isEmpty(l)){
+
+        Node *p = l->first->prox;
+
+        // Atualiza o ponteiro
+        while(p != NULL && p->val != val){
+            p = p->prox;
+        }
+
+        // Se o valor procurado tiver sido encontrado;
+        if(p != NULL){
+
+            // Se o valor procurado estiver no ultimo nó da lista
+            if(l->last == p){
+
+                l->last = p->ant;
+
+            }
+
+            // Se o valor procurado estiver no primeiro nó da lista
+            if(l->first->prox == p){
+
+                l->first->prox = p->prox;
+
+            }else{
+
+                Node *aux = p->ant;
+                aux->prox = p->prox;
+
+            }
+
+            free(p);
+            l->size--;
+        
+        }else{
+
+            puts("---> Valor procurado não encontrado!\n\n");
+        }
+
+    }else{
+
+        puts("---> Lista Vazia!\n\n");
+    
+    }
+}

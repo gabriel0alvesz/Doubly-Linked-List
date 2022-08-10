@@ -30,7 +30,7 @@ void List_Create(List *l);
 /**
  * @brief Cria um nó.
  * 
- * @param val Valor 
+ * @param val Valor.
  * @return Retorno um nó.
  */
 Node *List_CreateNode(int val);
@@ -61,7 +61,7 @@ void List_InsertInHead(List *l, int val);
  * @brief Insere um nó no Final da Lista.
  * 
  * @param l Endereço da Lista (&l)
- * @param val Valor
+ * @param val Valor.
  */
 void List_InsertFinalList(List *l, int val);
 
@@ -71,5 +71,13 @@ void List_InsertFinalList(List *l, int val);
  * @param l Endereço da lista (&l).
  */
 void List_PrintListV1(List *l);
+
+/**
+ * @brief Remove um nó da lista.
+ * 
+ * @param l Endereço da lista (&l).
+ * @param val Valor.
+ */
+void List_RemoveNode(List *l, int val);
 
 #endif
