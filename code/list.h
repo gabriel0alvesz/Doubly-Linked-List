@@ -58,6 +58,14 @@ void List_DestroyList(List *l);
 void List_InsertInHead(List *l, int val);
 
 /**
+ * @brief Insere um nó no Final da Lista.
+ * 
+ * @param l Endereço da Lista (&l)
+ * @param val Valor
+ */
+void List_InsertFinalList(List *l, int val);
+
+/**
  * @brief Imprime Lista a partir do 1o nó.
  * 
  * @param l Endereço da lista (&l).

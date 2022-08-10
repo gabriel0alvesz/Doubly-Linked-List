@@ -60,6 +60,27 @@ void List_InsertInHead(List *l, int val){
     }
 
     l->size++;
+
+}
+
+void List_InsertFinalList(List *l, int val){
+
+    Node *new = List_CreateNode(val);
+
+    if(List_isEmpty(l)){
+
+        l->first->prox = new;
+        l->last = new;
+
+    }else{
+        
+        new->ant = l->last; // o antigo ultimo elemento passa a ser o elemento anterior do novo nó
+        l->last->prox = new; // O penultimo elemento agora tera seu ponteiro prox apontando para o ultimo nó
+        l->last = new; // o ponteiro de ultimo agora aponta para o novo nó inserido
+        l->last->prox = NULL;
+    }
+
+    l->size++;
 }
 
 void List_PrintListV1(List *l){
