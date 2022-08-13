@@ -22,21 +22,20 @@ Node *List_CreateNode(int val){
 
 void List_DestroyList(List *l){
 
-    Node *pos = l->first->prox;
+    Node *p = l->first;
     Node *aux = NULL;
 
-    while(pos != NULL){
+    while(p != NULL){
 
-        aux = pos;
-        pos = pos->prox;
+        aux = p;
+        p = p->prox;
         free(aux);
+
     }
 
-    free(pos);
-    free(l);
-
+    free(p);
     l = NULL;
-
+    // Lista Duplamente Encadeada desalocada!
 }
 
 bool List_isEmpty(List *l){

@@ -24,5 +24,7 @@ int main(){
 
     List_PrintListV1(&l);
 
+    List_DestroyList(&l);
+
     return 0;
 }
